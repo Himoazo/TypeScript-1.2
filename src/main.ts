@@ -43,18 +43,6 @@ submitBtn.addEventListener("click", () => {
 
 });
 
-//Ta bort enskild kurs
-function deleteItem(button: HTMLButtonElement) {
-    const span = button.parentNode as HTMLSpanElement;
-    span.remove();
-    localStorage.setItem("key", printDiv.innerHTML); 
-}
-
-//Redigera knappen
-function editItem(button: HTMLButtonElement){
-    const span = button.parentNode as HTMLSpanElement;
-    localStorage.setItem("key", printDiv.innerHTML);
-}
 
 //Skriver skapad kurs till DOM och sparar den i localstorage
 function printCourse(newCourse: CourseInfo):void{
@@ -65,8 +53,8 @@ function printCourse(newCourse: CourseInfo):void{
     <p><strong>Namn:</strong> <span contenteditable="true">${newCourse.name}</span> </p>
     <p><strong>Progression:</strong> <span contenteditable="true">${newCourse.progression}</span> </p>
     <p><strong>Url:</strong> <span contenteditable="true">${newCourse.syllabus}</span> </p>
-    <button onclick="deleteItem(this)" id="delete">Radera</button>
-    <button onclick="editItem(this)" id="edit">Redigera</button>
+    <button id="delete">Radera</button>
+    <button id="edit">Redigera</button>
     </span>
     `
     localStorage.setItem("key", printDiv.innerHTML); 
@@ -89,3 +77,26 @@ clear.addEventListener("click", ()=>{
     location.reload();
 });
 
+
+//Ta bort enskild kurs
+function deleteItem(button: HTMLButtonElement) {
+    const span = button.parentNode as HTMLSpanElement;
+    span.remove();
+    localStorage.setItem("key", printDiv.innerHTML); 
+}
+
+//Redigera knappen
+function editItem(button: HTMLButtonElement){
+    const span = button.parentNode as HTMLSpanElement;
+    localStorage.setItem("key", printDiv.innerHTML);
+}
+
+//Event delegation för radera och redigera knappar i o m att Parcel inte är kompatible med inline event handler
+printDiv.addEventListener("click", (event) => {
+    const target = event.target as HTMLButtonElement;
+    if (target.matches("#edit")) {
+        editItem(target);
+    } else if (target.matches("#delete")) {
+        deleteItem(target);
+    }
+});
