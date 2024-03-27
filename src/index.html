@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TS labb 1.2</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="main.ts"></script>
+</head>
+<body>
+    <div id="mainDiv">
+    <form id="coursForm">
+        <label for="courseCode">Kurskod:</label><br>
+        <input type="text" id="courseCode" name="courseCode"><br>
+        <label for="courseName">Kursnamn:</label><br>
+        <input type="text" id="courseName" name="courseName"><br>
+        <label>progression:</label><br>
+        <input type="radio" id="A" name="progression" value="A">
+        <label for="A">A</label>
+        <input type="radio" id="B" name="progression" value="B">
+        <label for="B">B</label>
+        <input type="radio" id="C" name="progression" value="C">
+        <label for="C">C</label><br>
+        <label for="syllabus">Kursens webbplats:</label><br>
+        <input type="text" id="syllabus" name="syllabus"><br><br>
+        <button type="submit" id="submitCourse">Skapa kurs</button>
+    </form>
+    
+    <div id="courseDiv"></div>
+    <button id="clear" >Radera alla kurser</button>
+
+    </div>
+</body>
+</html>
+

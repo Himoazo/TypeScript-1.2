@@ -1,0 +1,42 @@
+body{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(25deg, #9ec9a3 50%, #d6ffe1 50%);
+}
+
+#mainDiv{
+    margin-top: 3vh;
+    width: fit-content;
+    background-color: rgb(124, 208, 254);
+    padding: 5em;
+}
+
+p{
+    font-size: larger;
+}
+
+label{
+    font-weight: bolder;
+    font-size: larger;
+}
+
+button{
+    cursor: pointer;
+    font-size: large;
+    border-radius: 5px;
+}
+
+#edit{
+    background-color: rgb(171, 200, 171);
+}
+
+#delete{
+    background-color: rgb(255, 221, 221);
+}
+
+#clear{
+    margin-top: 2vh;
+    background-color: rgb(255, 155, 155);
+}

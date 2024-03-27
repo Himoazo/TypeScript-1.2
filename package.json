@@ -1,0 +1,16 @@
+{
+  "name": "typescript-1.2",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel --open msedge",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
