@@ -43,6 +43,19 @@ submitBtn.addEventListener("click", () => {
 
 });
 
+//Ta bort enskild kurs
+function deleteItem(button: HTMLButtonElement) {
+    const span = button.parentNode as HTMLSpanElement;
+    span.remove();
+    localStorage.setItem("key", printDiv.innerHTML); 
+}
+
+//Redigera knappen
+function editItem(button: HTMLButtonElement){
+    const span = button.parentNode as HTMLSpanElement;
+    localStorage.setItem("key", printDiv.innerHTML);
+}
+
 //Skriver skapad kurs till DOM och sparar den i localstorage
 function printCourse(newCourse: CourseInfo):void{
 
@@ -76,15 +89,3 @@ clear.addEventListener("click", ()=>{
     location.reload();
 });
 
-//Ta bort enskild kurs
-function deleteItem(button: HTMLButtonElement) {
-    const span = button.parentNode as HTMLSpanElement;
-    span.remove();
-    localStorage.setItem("key", printDiv.innerHTML); 
-}
-
-//Redigera knappen
-function editItem(button: HTMLButtonElement){
-    const span = button.parentNode as HTMLSpanElement;
-    localStorage.setItem("key", printDiv.innerHTML);
-}
