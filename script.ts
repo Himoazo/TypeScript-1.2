@@ -80,24 +80,13 @@ clear.addEventListener("click", ()=>{
 
 
 function deleteItem(button: HTMLButtonElement) {
-    /* const span = button.parentNode as HTMLSpanElement;
-    const index = courses.indexOf.call(courseDiv.children, span); // returnera index av span
-    courses.splice(index, 1); */
-    /* const span = button.parentNode as HTMLSpanElement;
+    
+    const span = button.parentNode as HTMLSpanElement;
     span.remove();
-    localStorage.setItem("key", JSON.stringify(courses)); */
-    /* span.remove();
-    localStorage.setItem("key", courseDiv.innerHTML); */
+    localStorage.setItem("key", JSON.stringify(courseDiv.innerHTML));
+
 }
 
 function editItem(button: HTMLButtonElement){
-    const span = button.parentNode as HTMLSpanElement;
-    localStorage.setItem("key", courseDiv.innerHTML);
-    /* const span = button.parentNode as HTMLSpanElement;
-    const courseIndex = Array.from(courseDiv.children).indexOf(span); // Get the index of the course in the DOM
-    const storedCourses = localStorage.getItem("key");
-    if (storedCourses !== null) {
-        const courses: CourseInfo[] = JSON.parse(storedCourses);
-        localStorage.setItem("key", JSON.stringify(courses));
-    } */
+    
 }
