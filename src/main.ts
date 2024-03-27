@@ -3,7 +3,7 @@
 interface CourseInfo {
     code: string,
     name: string,
-    progression: string,
+    progression: "A" | "B" | "C",
     syllabus: string 
 }
 
@@ -20,7 +20,7 @@ submitBtn.addEventListener("click", () => {
     const newCourse: CourseInfo = {
         code: courseCode.value,
         name: courseName.value,
-        progression: courseProgression.value,
+        progression: courseProgression.value as "A" | "B" | "C",
         syllabus: courseSyllabus.value
     }
 
@@ -88,7 +88,15 @@ function deleteItem(button: HTMLButtonElement) {
 //Redigera knappen
 function editItem(button: HTMLButtonElement){
     const span = button.parentNode as HTMLSpanElement;
-    localStorage.setItem("key", printDiv.innerHTML);
+    const progressionText = span.querySelector('p:nth-child(3) span') as HTMLSpanElement;
+    const newProgression = progressionText?.textContent?.trim();
+    
+    // kontrollera om progression är A B eller C
+    if (newProgression === "A" || newProgression === "B" || newProgression === "C") {
+        localStorage.setItem("key", printDiv.innerHTML);
+    } else {
+        alert("Progression kan endast vara A, B eller C.");
+    }
 }
 
 //Event delegation för radera och redigera knappar i o m att Parcel inte är kompatible med inline event handler
