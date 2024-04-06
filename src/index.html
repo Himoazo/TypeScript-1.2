@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TS labb 1.2</title>
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="main.ts"></script>
+    <script type="module" src="script.ts"></script>
 </head>
 <body>
     <div id="mainDiv">
@@ -15,7 +15,7 @@
         <label for="courseName">Kursnamn:</label><br>
         <input type="text" id="courseName" name="courseName"><br>
         <label>progression:</label><br>
-        <input type="radio" id="A" name="progression" value="A">
+        <input type="radio" id="A" name="progression" value="A" checked>
         <label for="A">A</label>
         <input type="radio" id="B" name="progression" value="B">
         <label for="B">B</label>
@@ -24,6 +24,7 @@
         <label for="syllabus">Kursens webbplats:</label><br>
         <input type="text" id="syllabus" name="syllabus"><br><br>
         <button type="submit" id="submitCourse">Skapa kurs</button>
+        <button id="save">Redigera</button>
     </form>
     
     <div id="courseDiv"></div>
